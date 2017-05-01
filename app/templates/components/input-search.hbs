@@ -1,0 +1,7 @@
+<div class="shadow-container absent">
+  <div class="shadow"></div>
+</div>
+{{ search-icon shouldDisplay=(not isSearching) }}
+{{ loading-gif shouldDisplay=isSearching }}
+<input type="text" placeholder="e.g. Mario" value="{{ value }}"><!--
+--><button>Search</button>
