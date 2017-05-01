@@ -15,6 +15,13 @@
         @include per-size('margin-top', '36', '36', '18', '20', '22', 'px');
       }
 
+      a {
+        @include res-aware-font-size-heading('lg');
+
+        color: $fg;
+        font-family: 'Maitree', serif;
+      }
+
       > img, > .info {
         display: inline-block;
         vertical-align: top;

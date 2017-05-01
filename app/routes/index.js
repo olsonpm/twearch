@@ -92,7 +92,7 @@ function transformStreams(channels) {
   return fp.map(fp.flow(
     fp.pick([
       'game', 'viewers', 'preview.medium', 'channel.display_name'
-      , 'channel.status'
+      , 'channel.status', 'channel.url'
     ])
     , flattenObj
     , uMapKeys((_val, key) => fp.getOr(key, key, apiToModelKeys))

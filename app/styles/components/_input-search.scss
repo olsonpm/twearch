@@ -6,21 +6,21 @@
   input {
     @include per-size('padding-left', '38', '46', '60', '60', '60', 'px');
 
-    //
-    // this hardcoded width is just a hack because I don't feel like getting
-    //   floats to work well with the absolutely positioned search icon
-    //
-    @include per-size('width', '55', '60', '60', '60', '60', '%');
-
     background-color: $bg-light;
+    border: 1px solid $primary-dark;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    border: 1px solid $primary-dark;
     display: inline-block;
     max-width: 450px;
     outline: none;
     position: relative;
     z-index: 1;
+
+    //
+    // this hardcoded width is just a hack because I don't feel like getting
+    //   floats to work well with the absolutely positioned search icon
+    //
+    width: 65%;
   }
 
   button {
@@ -34,9 +34,9 @@
       , $primary-dark-gradient 0%
       , $primary-dark 100%
     );
+    border: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border: none;
     color: $bg-light;
     cursor: pointer;
     display: inline-block;
@@ -45,6 +45,12 @@
     text-align: left;
     transition: background $duration-short ease-out;
     z-index: 1;
+
+    // for some reason under $screen-xxs-max width, the input and button element
+    //   heights go out of sync.
+    @media (max-width: $screen-xxs-max) {
+      height: 38px;
+    }
 
     &:hover, &:focus {
       background: linear-gradient(
@@ -78,8 +84,8 @@
   }
 
   .spinner {
-    @include per-size('top', '11', '11', '11', '11', '11', 'px');
-    @include per-size('left', '13', '13', '13', '13', '13', 'px');
+    @include per-size('top', '8', '8', '8', '10', '10', 'px');
+    @include per-size('left', '8', '9', '9', '11', '11', 'px');
     @include per-size('height', '22', '27', '30', '30', '30', 'px');
 
     display: inline-block;
